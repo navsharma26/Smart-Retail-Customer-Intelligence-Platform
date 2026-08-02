@@ -1,0 +1,285 @@
+{
+  "intents": [
+    {
+      "tag": "return_policy",
+      "keywords": ["return", "refund", "exchange", "money back", "return policy"],
+      "patterns": [
+        "What is your return policy?",
+        "How can I return an item?",
+        "Can I get a refund for my purchase?",
+        "How many days do I have to exchange an item?",
+        "What is the money back guarantee?"
+      ],
+      "responses": [
+        "We offer a 30-day hassle-free return and exchange policy for unwashed and unused items with original receipts.",
+        "You can return items in-store or by mail within 30 days of delivery for a full refund."
+      ]
+    },
+    {
+      "tag": "shipping_info",
+      "keywords": ["shipping", "delivery", "dispatch", "deliver", "freight", "courier"],
+      "patterns": [
+        "What are your shipping rates and delivery times?",
+        "How long does standard shipping take?",
+        "Do you offer free delivery?",
+        "When will my order be dispatched?"
+      ],
+      "responses": [
+        "Standard shipping takes 3-5 business days. We offer free standard delivery on all orders over $50!",
+        "Express shipping arrives in 1-2 business days for a flat rate of $9.99."
+      ]
+    },
+    {
+      "tag": "payment_methods",
+      "keywords": ["payment", "pay", "credit card", "paypal", "apple pay", "billing"],
+      "patterns": [
+        "What payment methods do you accept?",
+        "Can I pay with PayPal or Apple Pay?",
+        "Do you accept cash or credit cards?",
+        "How can I pay for my online order?"
+      ],
+      "responses": [
+        "We accept Visa, MasterCard, American Express, PayPal, Apple Pay, Google Pay, and store gift cards.",
+        "All transactions are secure and encrypted. We support all major credit cards and digital wallets."
+      ]
+    },
+    {
+      "tag": "store_hours",
+      "keywords": ["hours", "open", "close", "operating hours", "timing", "schedule"],
+      "patterns": [
+        "What are your store operating hours?",
+        "What time do you open and close?",
+        "Are you open on weekends and holidays?",
+        "When does the nearest store close today?"
+      ],
+      "responses": [
+        "Our retail stores are open Monday through Saturday from 9:00 AM to 9:00 PM, and Sundays from 10:00 AM to 6:00 PM.",
+        "Store hours may vary by location. Online shopping is available 24/7!"
+      ]
+    },
+    {
+      "tag": "order_tracking",
+      "keywords": ["track", "tracking", "status", "where is my order", "package"],
+      "patterns": [
+        "How do I track my order?",
+        "Where is my package right now?",
+        "Can I check my order status online?",
+        "I haven't received my tracking number yet."
+      ],
+      "responses": [
+        "You can track your package by clicking the tracking link in your dispatch confirmation email or under 'My Orders' in your account.",
+        "Please enter your order ID on our Track Order page to view real-time delivery status."
+      ]
+    },
+    {
+      "tag": "discounts_promotions",
+      "keywords": ["discount", "coupon", "promo", "sale", "deal", "offer"],
+      "patterns": [
+        "Do you have any active coupons or promo codes?",
+        "Are there any discounts available today?",
+        "How do I apply a discount code at checkout?",
+        "When is your next clearance sale?"
+      ],
+      "responses": [
+        "Subscribe to our newsletter to receive 15% off your first purchase! You can apply promo codes at checkout.",
+        "Check out our 'Deals of the Week' section on the home page for up to 40% off selected items."
+      ]
+    },
+    {
+      "tag": "loyalty_program",
+      "keywords": ["loyalty", "rewards", "points", "membership", "club", "vip"],
+      "patterns": [
+        "How does your retail customer rewards program work?",
+        "How do I earn and redeem loyalty points?",
+        "Is it free to join the VIP membership club?",
+        "How many points do I have in my rewards balance?"
+      ],
+      "responses": [
+        "Join our VIP Rewards Club for free! Earn 1 point for every $1 spent and redeem 100 points for a $5 store voucher.",
+        "Sign up today to receive exclusive birthday rewards and early access to promotional sales."
+      ]
+    },
+    {
+      "tag": "contact_support",
+      "keywords": ["contact", "support", "email", "phone", "call", "helpdesk"],
+      "patterns": [
+        "How can I contact customer support?",
+        "What is your customer service phone number?",
+        "Can I email your support team?",
+        "Is live chat available with a human agent?"
+      ],
+      "responses": [
+        "Reach our customer care team by calling 1-800-SMART-RETAIL (Mon-Fri 8 AM - 8 PM) or emailing support@smartretail.com.",
+        "Our support team is happy to help! You can also chat live with us during business hours."
+      ]
+    },
+    {
+      "tag": "gift_cards",
+      "keywords": ["gift card", "voucher", "e-gift", "gift certificate", "card balance"],
+      "patterns": [
+        "Do you sell electronic gift cards?",
+        "How do I check my gift card balance?",
+        "Can I use gift cards in-store and online?",
+        "Do gift cards expire?"
+      ],
+      "responses": [
+        "We offer physical and e-gift cards from $10 to $500. They never expire and can be redeemed online or in-store.",
+        "Check your gift card balance at checkout or under the Gift Card balance section on our website."
+      ]
+    },
+    {
+      "tag": "product_availability",
+      "keywords": ["stock", "available", "in stock", "restock", "inventory"],
+      "patterns": [
+        "Is an item currently in stock?",
+        "When will out-of-stock products be restocked?",
+        "Can I request a notification when a product is back in stock?",
+        "How do I check local store inventory?"
+      ],
+      "responses": [
+        "Item availability is shown on each product page. Click 'Notify Me When Available' to receive an alert upon restock.",
+        "You can select 'Check Store Stock' on any product page to see local inventory levels."
+      ]
+    },
+    {
+      "tag": "customer_service",
+      "keywords": ["service", "agent", "representative", "complaint", "help"],
+      "patterns": [
+        "I need help with a customer service issue.",
+        "Can I speak with a customer service representative?",
+        "Where do I file a store complaint?",
+        "Who can assist me with my shopping experience?"
+      ],
+      "responses": [
+        "Our customer experience specialists are dedicated to resolving your queries. Please share your order number and concern.",
+        "We take customer feedback seriously. Connect with a live agent or leave a message for prompt assistance."
+      ]
+    },
+    {
+      "tag": "store_location",
+      "keywords": ["location", "find store", "address", "branches", "near me"],
+      "patterns": [
+        "Where is the nearest retail store located?",
+        "How do I find a store near me?",
+        "What is the address of your main store?",
+        "Do you have physical retail stores in my city?"
+      ],
+      "responses": [
+        "Use our 'Store Locator' tool on the website to find store addresses, maps, and directions near you.",
+        "We operate over 50 retail locations nationwide! Enter your zip code online to find the closest store."
+      ]
+    },
+    {
+      "tag": "size_guide",
+      "keywords": ["size", "sizing", "measurement", "fit", "chart"],
+      "patterns": [
+        "Where can I find your clothing size chart?",
+        "How do I know which size to choose?",
+        "Do your clothes run true to size?",
+        "What are the shoe size conversions?"
+      ],
+      "responses": [
+        "Click the 'Size Guide' link on any apparel or footwear page for detailed chest, waist, and length measurements.",
+        "Most of our items fit true to size. Detailed garment dimensions and customer fit ratings are provided online."
+      ]
+    },
+    {
+      "tag": "warranty",
+      "keywords": ["warranty", "guarantee", "repair", "defect", "coverage"],
+      "patterns": [
+        "Do your electronic products come with a warranty?",
+        "How long is the manufacturer warranty?",
+        "What is covered under the product guarantee?",
+        "How do I claim a warranty repair or replacement?"
+      ],
+      "responses": [
+        "All electronic items include a 1-year manufacturer warranty against defects. Extended protection plans are also available.",
+        "To make a warranty claim, please contact support with your proof of purchase and product serial number."
+      ]
+    },
+    {
+      "tag": "price_matching",
+      "keywords": ["price match", "lower price", "competitor", "price adjustment"],
+      "patterns": [
+        "Do you price match with other retailers?",
+        "What is your price adjustment policy?",
+        "Can I get a refund if the price drops after purchase?",
+        "Will you match Amazon or competitor prices?"
+      ],
+      "responses": [
+        "We match identical in-stock items from major authorized competitors within 14 days of purchase!",
+        "If an item you bought goes on sale on our site within 7 days, contact us for a price adjustment credit."
+      ]
+    },
+    {
+      "tag": "cancel_order",
+      "keywords": ["cancel", "cancellation", "stop order", "change order"],
+      "patterns": [
+        "How can I cancel my order?",
+        "Can I change or modify an order after placing it?",
+        "Is it too late to stop my order shipment?",
+        "Where is the cancel order button?"
+      ],
+      "responses": [
+        "Orders can be cancelled within 45 minutes of placement under 'My Orders'. After dispatch, free returns apply.",
+        "If your order has not shipped yet, contact customer support immediately to request a cancellation or address change."
+      ]
+    },
+    {
+      "tag": "damaged_items",
+      "keywords": ["damaged", "broken", "faulty", "defective", "missing"],
+      "patterns": [
+        "My item arrived damaged or defective.",
+        "What should I do if a product is broken in transit?",
+        "I received a missing or incorrect item in my parcel.",
+        "How do I report a damaged package?"
+      ],
+      "responses": [
+        "We are so sorry! Please take a photo of the damaged item/box and contact support within 48 hours for a free replacement.",
+        "If an item is missing or defective, report it via 'Order Help' for an immediate replacement or full refund."
+      ]
+    },
+    {
+      "tag": "international_shipping",
+      "keywords": ["international", "worldwide", "overseas", "customs", "global"],
+      "patterns": [
+        "Do you ship internationally?",
+        "Which countries do you deliver to?",
+        "Are customs duties and taxes included?",
+        "How much is worldwide delivery?"
+      ],
+      "responses": [
+        "We ship to over 30 countries worldwide! Shipping rates and duties are calculated at checkout.",
+        "International orders take 7-14 business days. Tracking is provided for all overseas shipments."
+      ]
+    },
+    {
+      "tag": "curbside_pickup",
+      "keywords": ["curbside", "pickup", "click and collect", "in-store pickup"],
+      "patterns": [
+        "Do you offer curbside pickup or click-and-collect?",
+        "How does in-store pickup work?",
+        "When will my order be ready for pickup?",
+        "What do I need to bring for curbside pickup?"
+      ],
+      "responses": [
+        "Select 'Free In-Store Pickup' at checkout! Your order is usually ready within 2 hours.",
+        "Bring your confirmation email and valid ID to the designated curbside parking spot or pickup counter."
+      ]
+    },
+    {
+      "tag": "feedback",
+      "keywords": ["feedback", "review", "suggestion", "rate", "survey"],
+      "patterns": [
+        "How can I submit a product review?",
+        "Where can I leave feedback about my store visit?",
+        "Can I complete a customer satisfaction survey?",
+        "How do I share a product suggestion?"
+      ],
+      "responses": [
+        "We love hearing from you! Leave a review on the product page or fill out our Customer Feedback survey.",
+        "Your feedback helps us improve. Email feedback@smartretail.com to share your thoughts with our team."
+      ]
+    }
+  ]
+}
