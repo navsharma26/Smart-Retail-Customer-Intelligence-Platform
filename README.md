@@ -1,5 +1,7 @@
 # Smart Retail & Customer Intelligence Platform
 
+[![Live Render API](https://img.shields.io/badge/Render%20Live%20API-Online-brightgreen.svg)](https://smart-retail-platform-87jb.onrender.com)
+[![Swagger Docs](https://img.shields.io/badge/Swagger%20UI-%2Fdocs-blue.svg)](https://smart-retail-platform-87jb.onrender.com/docs)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109.0-green.svg)](https://fastapi.tiangolo.com/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.9.0-red.svg)](https://opencv.org/)
@@ -7,6 +9,14 @@
 [![Docker](https://img.shields.io/badge/Docker-Containerized-blue.svg)](https://www.docker.com/)
 
 An enterprise-grade, multi-modal Machine Learning & Computer Vision platform designed for smart retail analytics, customer footfall identification, automated product classification, customer sentiment analysis, and intelligent conversational customer support.
+
+---
+
+## 🌐 Live Production Deployments
+
+- **Render Live Cloud API**: [https://smart-retail-platform-87jb.onrender.com](https://smart-retail-platform-87jb.onrender.com)
+- **Interactive Swagger API Documentation**: [https://smart-retail-platform-87jb.onrender.com/docs](https://smart-retail-platform-87jb.onrender.com/docs)
+- **Vercel Deployment**: [https://smart-retail-customer-platform-437yq1hnu-navneet-s-projects1.vercel.app](https://smart-retail-customer-platform-437yq1hnu-navneet-s-projects1.vercel.app)
 
 ---
 
@@ -99,6 +109,7 @@ Smart Retail & Customer Intelligence Platform/
 │   ├── test_unified_pipeline.py
 │   └── test_endpoints.py    # Pytest & httpx integration suite
 ├── Dockerfile               # Production Docker setup (python:3.10-slim)
+├── vercel.json              # Vercel serverless deployment config
 ├── requirements.txt         # Production dependencies
 ├── .gitignore
 └── README.md
@@ -155,7 +166,7 @@ curl http://localhost:8000/health
 
 **cURL Request:**
 ```bash
-curl -X POST "http://localhost:8000/recognize-face" \
+curl -X POST "https://smart-retail-platform-87jb.onrender.com/recognize-face" \
   -H "accept: application/json" \
   -H "Content-Type: multipart/form-data" \
   -F "file=@/path/to/customer_face.jpg"
@@ -165,7 +176,7 @@ curl -X POST "http://localhost:8000/recognize-face" \
 ```python
 import requests
 
-url = "http://localhost:8000/recognize-face"
+url = "https://smart-retail-platform-87jb.onrender.com/recognize-face"
 with open("customer_face.jpg", "rb") as f:
     response = requests.post(url, files={"file": f})
 
@@ -198,7 +209,7 @@ print(response.json())
 
 **cURL Request:**
 ```bash
-curl -X POST "http://localhost:8000/classify-product" \
+curl -X POST "https://smart-retail-platform-87jb.onrender.com/classify-product" \
   -F "file=@/path/to/sneakers.jpg"
 ```
 
@@ -225,7 +236,7 @@ curl -X POST "http://localhost:8000/classify-product" \
 
 **cURL Request:**
 ```bash
-curl -X POST "http://localhost:8000/analyze-sentiment" \
+curl -X POST "https://smart-retail-platform-87jb.onrender.com/analyze-sentiment" \
   -H "Content-Type: application/json" \
   -d '{"text": "Exceptional product quality and super fast shipping!"}'
 ```
@@ -252,7 +263,7 @@ curl -X POST "http://localhost:8000/analyze-sentiment" \
 
 **cURL Request:**
 ```bash
-curl -X POST "http://localhost:8000/chatbot" \
+curl -X POST "https://smart-retail-platform-87jb.onrender.com/chatbot" \
   -H "Content-Type: application/json" \
   -d '{"query": "What is your return policy?", "customer_id": "CUST-1001"}'
 ```
@@ -275,7 +286,7 @@ curl -X POST "http://localhost:8000/chatbot" \
 
 **cURL Request:**
 ```bash
-curl -X GET "http://localhost:8000/dashboard/stats"
+curl -X GET "https://smart-retail-platform-87jb.onrender.com/dashboard/stats"
 ```
 
 **Sample Response:**
