@@ -8,11 +8,9 @@ python-multipart>=0.0.6,<1.0.0
 opencv-python-headless>=4.9.0.80
 pillow>=10.2.0
 
-# Machine Learning & Deep Learning
+# Machine Learning & Data Processing
 numpy>=1.24.0,<2.0.0
 scikit-learn>=1.4.0
-tensorflow-cpu>=2.15.0; sys_platform != "darwin"
-tensorflow>=2.15.0; sys_platform == "darwin"
 
 # Natural Language Processing & Chatbot
 nltk>=3.8.1
