@@ -12,7 +12,10 @@ from pathlib import Path
 import pickle
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-import cv2
+try:
+    import cv2
+except ImportError:
+    cv2 = None
 import numpy as np
 
 # Standard product classes
