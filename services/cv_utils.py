@@ -32,21 +32,20 @@ class CVProcessor:
         :param cascade_path: Path to custom Haar Cascade XML file.
                              Defaults to OpenCV's built-in frontal face cascade.
         """
-        if cascade_path is None:
-            cascade_path = os.path.join(
-                cv2.data.haarcascades, "haarcascade_frontalface_default.xml"
-            )
+        self.face_cascade = None
+        if cv2 is not None:
+            try:
+                if cascade_path is None and hasattr(cv2, "data") and hasattr(cv2.data, "haarcascades"):
+                    cascade_path = os.path.join(
+                        cv2.data.haarcascades, "haarcascade_frontalface_default.xml"
+                    )
 
-        if not os.path.exists(cascade_path):
-            raise FileNotFoundError(
-                f"Haar cascade XML file not found at path: {cascade_path}"
-            )
-
-        self.face_cascade = cv2.CascadeClassifier(cascade_path)
-        if self.face_cascade.empty():
-            raise RuntimeError(
-                f"Failed to load Haar Cascade classifier from {cascade_path}"
-            )
+                if cascade_path and os.path.exists(cascade_path):
+                    self.face_cascade = cv2.CascadeClassifier(cascade_path)
+                    if self.face_cascade.empty():
+                        self.face_cascade = None
+            except Exception:
+                self.face_cascade = None
 
     @staticmethod
     def load_image(input_data: Union[str, Path, bytes, np.ndarray]) -> np.ndarray:
@@ -170,6 +169,9 @@ class CVProcessor:
         :param min_size: Minimum possible object size.
         :return: List of dictionaries containing bounding box coordinates: [{'x': x, 'y': y, 'w': w, 'h': h}]
         """
+        if cv2 is None or self.face_cascade is None:
+            return []
+
         gray = self.convert_to_grayscale(image)
 
         faces = self.face_cascade.detectMultiScale(

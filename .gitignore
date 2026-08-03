@@ -34,8 +34,8 @@ data/processed/*
 models/*
 !models/*.gitkeep
 !models/.gitkeep
+!models/*.pkl
 *.h5
-*.pkl
 *.onnx
 *.pt
 *.pth

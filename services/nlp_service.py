@@ -124,13 +124,52 @@ class SentimentAnalyzerService:
 
     def _train_and_save_default_model(self):
         """Train default TF-IDF + Logistic Regression model on sample reviews."""
-        import importlib
-        train_mod = importlib.import_module("notebooks.02_train_sentiment_model")
-        train_mod.train_sentiment_model()
-        with open(self.model_path, "rb") as f:
-            self.model = pickle.load(f)
-        with open(self.vectorizer_path, "rb") as f:
-            self.vectorizer = pickle.load(f)
+        sample_reviews = [
+            ("Exceptional product quality! Super fast delivery and wonderful packaging.", "positive"),
+            ("I love these shoes! Extremely comfortable, durable, and stylish.", "positive"),
+            ("Great customer service, friendly staff, and easy return policy.", "positive"),
+            ("Works perfectly as expected. Highly recommend this brand to everyone!", "positive"),
+            ("Very satisfied with my purchase. The item exceeded my expectations.", "positive"),
+            ("Fantastic store experience. Will definitely buy from here again!", "positive"),
+            ("Smooth checkout process and quick shipping. 5 stars!", "positive"),
+            ("High quality fabric and true to size fit. Loving this bag!", "positive"),
+            ("Super helpful customer support agent resolved my issue immediately.", "positive"),
+            ("Great value for money. Discount codes worked flawlessly.", "positive"),
+            ("Terrible quality. The zipper broke on the first day of use.", "negative"),
+            ("Horrible customer service. Nobody answered my phone call or email.", "negative"),
+            ("Extremely disappointed. Package arrived damaged and missing items.", "negative"),
+            ("Size chart is completely wrong. Shoes were way too small and uncomfortable.", "negative"),
+            ("Waste of money. Product stopped working after two hours.", "negative"),
+            ("Very slow delivery! Took three weeks to arrive with no tracking info.", "negative"),
+            ("Return process was a nightmare and they charged hidden restocking fees.", "negative"),
+            ("Cheap materials and poor craftsmanship. Do not buy this item.", "negative"),
+            ("Item description was misleading and fake. Very angry customer.", "negative"),
+            ("Received wrong color and bad quality fabric. Requesting a full refund.", "negative"),
+            ("The product is average. Works okay, nothing extraordinary.", "neutral"),
+            ("Received item on time. Standard quality for the price paid.", "neutral"),
+            ("Packaging was fine. Sizing is okay but color is slightly different.", "neutral"),
+            ("Standard delivery timeframe. The product meets basic specifications.", "neutral"),
+            ("Decent customer service. The issue was handled eventually.", "neutral"),
+            ("Product functions as described in the manual.", "neutral"),
+        ]
+        raw_texts, labels = zip(*sample_reviews)
+        processed_texts = [self.preprocessor.preprocess(txt) for txt in raw_texts]
+
+        self.vectorizer = TfidfVectorizer(ngram_range=(1, 2), max_features=1000)
+        X_train = self.vectorizer.fit_transform(processed_texts)
+
+        self.model = LogisticRegression(C=1.0, max_iter=200)
+        self.model.fit(X_train, labels)
+
+        try:
+            self.model_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(self.model_path, "wb") as f:
+                pickle.dump(self.model, f)
+            with open(self.vectorizer_path, "wb") as f:
+                pickle.dump(self.vectorizer, f)
+            print("[SentimentAnalyzer] Default model trained and saved successfully.")
+        except Exception as e:
+            print(f"[SentimentAnalyzer] Note: Could not save PKL files ({e}). Using in-memory model.")
 
     def analyze_sentiment(self, text: str) -> Dict[str, Any]:
         """

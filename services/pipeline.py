@@ -11,7 +11,10 @@ Loads all saved models into memory once on application startup:
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
-import cv2
+try:
+    import cv2
+except ImportError:
+    cv2 = None
 import numpy as np
 
 from services.chatbot_service import HybridChatbotService, get_chatbot_service
