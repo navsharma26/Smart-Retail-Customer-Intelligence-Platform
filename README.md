@@ -14,10 +14,7 @@ An enterprise-grade, multi-modal Machine Learning & Computer Vision platform des
 
 ## 🌐 Live Production Deployments
 
-- **Render Live Cloud API**: [https://smart-retail-platform-87jb.onrender.com](https://smart-retail-platform-87jb.onrender.com)
-- **Interactive Swagger API Documentation**: [https://smart-retail-platform-87jb.onrender.com/docs](https://smart-retail-platform-87jb.onrender.com/docs)
-- **Vercel Deployment**: [https://smart-retail-customer-platform-437yq1hnu-navneet-s-projects1.vercel.app](https://smart-retail-customer-platform-437yq1hnu-navneet-s-projects1.vercel.app)
-
+- **Render Live Cloud API**: [
 ---
 
 ## System Architecture & Data Flow
