@@ -47,6 +47,7 @@ LEMMA_MAPPING = {
     "shoes": "shoe", "bags": "bag", "clothes": "clothing",
     "delivers": "deliver", "delivered": "deliver", "delivering": "deliver",
     "returns": "return", "returned": "return", "returning": "return",
+    "running": "run", "runs": "run", "ran": "run",
 }
 
 
